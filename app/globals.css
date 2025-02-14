@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.bg-button {
+  background: rgb(111,135,226);
+  background: linear-gradient(97deg, rgba(111,135,226,1) 26%, rgba(96,148,215,1) 36%, rgba(67,172,195,1) 66%, rgba(52,184,184,1) 78%);
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+@keyframes review {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-review {
+  animation: review 50s linear infinite;
+}
+.review-box {
+  transition: transform 1s ease-in-out;
+}
+.embla {
+  position: relative;
+  overflow: hidden;
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container {
+  display: flex;
+  flex-direction: row;
+}
+.embla__slide {
+  flex: 0 0 100%; /* Each slide occupies full viewport */
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.embla1 {
+  position: relative;
+  overflow: hidden;
+}
+.embla__viewport1 {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container1 {
+  display: flex;
+  flex-direction: row;
+}
+.embla__slide1 {
+  flex: 0 0 25%; /* Each slide occupies full viewport */
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@keyframes toast-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toast-leave {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-enter {
+  animation: toast-enter 0.5s ease-out forwards;
+}
+
+.animate-leave {
+  animation: toast-leave 0.5s ease-out forwards;
+}
